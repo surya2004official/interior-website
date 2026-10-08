@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivory: #F8F6F2;
+    --color-beige: #E8E0D5;
+    --color-walnut: #594536;
+    --color-gold: #C5A47E;
+    --color-charcoal: #1A1A1A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F8F6F2;
+    color: #1A1A1A;
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0ECE4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A47E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A88B6A;
+}
+
+/* Luxury Glassmorphism & Borders */
+.glass-panel-light {
+  background: rgba(248, 246, 242, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 164, 126, 0.22);
+}
+
+.glass-panel-dark {
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 164, 126, 0.25);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFCAAF 0%, #C5A47E 50%, #9B774E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-subtle {
+  border: 1px solid rgba(197, 164, 126, 0.25);
+}
+
+.gold-border-glow:hover {
+  border-color: #C5A47E;
+  box-shadow: 0 0 20px -3px rgba(197, 164, 126, 0.3);
+}
+
+/* Luxury Noise Texture Overlay */
+.editorial-overlay {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet-active {
+  background: #C5A47E !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}

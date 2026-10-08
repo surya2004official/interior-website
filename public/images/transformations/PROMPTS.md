@@ -1,0 +1,16 @@
+# Transformation image prompts
+
+Generated using the built-in image generation tool. These are illustrative AI design concepts, not photographs of completed client projects.
+
+## living.png
+
+Use case: photorealistic-natural. Asset: interior design website concept before/after diptych. Create one landscape image, precisely TWO equal-width panels side by side with NO gap, NO border, NO text. LEFT panel BEFORE renovation, RIGHT panel AFTER renovation. Show the EXACT SAME room from the EXACT SAME fixed camera position, lens, perspective, crop and daylight in BOTH panels. Windows, doors, walls, ceiling geometry and structural openings must align identically across the two images. Scene: living room with tall three-panel windows on the left, a fireplace centered on the far wall and oak floor; before: worn beige walls, dated brown sofa, tired carpet; after: warm ivory plaster, curved cream sofa, walnut joinery, refined travertine fireplace, oak floor. Professional realistic architectural photography, natural material detail, tasteful high-end warm neutral styling. Each panel shows the whole room. No people, no text or watermarks. Output landscape 1536x1024.
+
+## kitchen.png
+
+Use case: photorealistic-natural. Asset: interior design website concept before/after diptych. Create one landscape image, precisely TWO equal-width panels side by side with NO gap, NO border, NO text. LEFT panel BEFORE renovation, RIGHT panel AFTER renovation. Show the EXACT SAME room from the EXACT SAME fixed camera position, lens, perspective, crop and daylight in BOTH panels. Windows, doors, walls, ceiling geometry and structural openings must align identically across the two images. Scene: kitchen with a window centered on the back wall above the sink, L-shaped cabinetry and a central island; before: dated honey oak cabinets, beige tile counters, old vinyl floor; after: ivory and walnut cabinetry, stone counters, same island footprint, brushed brass details and pale limestone floor. Professional realistic architectural photography, natural material detail, tasteful high-end warm neutral styling. Each panel shows the whole room. No people, no text or watermarks. Output landscape 1536x1024.
+
+## bedroom.png
+
+Use case: photorealistic-natural. Asset: interior design website concept before/after diptych. Create one landscape image, precisely TWO equal-width panels side by side with NO gap, NO border, NO text. LEFT panel BEFORE renovation, RIGHT panel AFTER renovation. Show the EXACT SAME room from the EXACT SAME fixed camera position, lens, perspective, crop and daylight in BOTH panels. Windows, doors, walls, ceiling geometry and structural openings must align identically across the two images. Scene: bedroom with a large window on the right and bed centered on the rear wall, doorway on the left; before: faded peach paint, dated dark wooden bed and tired patterned carpet; after: warm textured ivory walls, upholstered linen bed, walnut nightstands, layered neutral bedding and oak floor. Professional realistic architectural photography, natural material detail, tasteful high-end warm neutral styling. Each panel shows the whole room. No people, no text or watermarks. Output landscape 1536x1024.
+
