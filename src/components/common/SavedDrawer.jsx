@@ -62,7 +62,8 @@ export const SavedDrawer = ({ isOpen, onClose }) => {
               ) : (
                 <div className="space-y-3">
                   {savedProjects.map(proj => (
-                    <div key={proj.id} className="flex gap-3 bg-stone-950 p-2.5 border border-stone-800 group hover:border-gold/40 transition-colors">
+                    <div key={proj.id} className="relative isolate flex gap-3 bg-stone-950 p-2.5 border border-stone-800 group hover:border-gold/40 transition-colors">
+                      <Link to={`/projects/${proj.id}`} aria-label={`View ${proj.title}`} onClick={onClose} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                       <img 
                         src={proj.heroImage} 
                         alt={proj.title} 
@@ -74,17 +75,15 @@ export const SavedDrawer = ({ isOpen, onClose }) => {
                           <p className="text-[10px] text-stone-400">{proj.location}</p>
                         </div>
                         <div className="flex items-center justify-between pt-1">
-                          <Link 
-                            to={`/projects/${proj.id}`} 
-                            onClick={onClose}
+                          <span
                             className="text-[10px] text-gold hover:underline flex items-center gap-1"
                           >
                             <span>View Monograph</span>
                             <ArrowRight className="w-2.5 h-2.5" />
-                          </Link>
+                          </span>
                           <button 
                             onClick={() => toggleSaveProject(proj.id)}
-                            className="text-stone-500 hover:text-rose-400 transition-colors"
+                            className="relative z-20 text-stone-500 hover:text-rose-400 transition-colors"
                             title="Remove project"
                           >
                             <Trash2 className="w-3.5 h-3.5" />

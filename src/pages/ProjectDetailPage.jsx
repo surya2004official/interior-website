@@ -245,14 +245,15 @@ export const ProjectDetailPage = () => {
             <h3 className="font-serif text-3xl text-charcoal mb-8">Related Architectural Works</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedProjects.map(rel => (
-                <div key={rel.id} className="bg-white border border-stone-200 group overflow-hidden rounded-2xl shadow-sm hover:shadow-luxury transition-all">
+                <div key={rel.id} className="relative isolate bg-white border border-stone-200 group overflow-hidden rounded-2xl shadow-sm hover:shadow-luxury transition-all">
+                  <Link to={`/projects/${rel.id}`} aria-label={`View ${rel.title}`} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                   <div className="aspect-[16/10] overflow-hidden">
                     <img src={rel.heroImage} alt={rel.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                   </div>
                   <div className="p-4 space-y-2">
                     <span className="text-[10px] text-gold uppercase">{rel.category}</span>
                     <h4 className="font-serif text-lg text-charcoal group-hover:text-gold transition-colors">
-                      <Link to={`/projects/${rel.id}`}>{rel.title}</Link>
+                      <span>{rel.title}</span>
                     </h4>
                     <p className="text-[11px] text-stone-500">{rel.location}</p>
                   </div>

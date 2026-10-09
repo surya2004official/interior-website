@@ -75,13 +75,14 @@ I would like to discuss a consultation based on these references.`;
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {savedProjects.map(proj => (
-                <div key={proj.id} className="bg-white border border-stone-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div key={proj.id} className="relative isolate bg-white border border-stone-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                  <Link to={`/projects/${proj.id}`} aria-label={`View ${proj.title}`} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                   <div>
                     <div className="aspect-[16/10] overflow-hidden relative">
                       <img src={proj.heroImage} alt={proj.title} className="w-full h-full object-cover" />
                       <button
                         onClick={() => toggleSaveProject(proj.id)}
-                        className="absolute top-3 right-3 p-2 rounded-full bg-charcoal-950/80 text-rose-400 hover:text-white"
+                        className="z-20 absolute top-3 right-3 p-2 rounded-full bg-charcoal-950/80 text-rose-400 hover:text-white"
                         title="Remove from saved"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -90,17 +91,17 @@ I would like to discuss a consultation based on these references.`;
                     <div className="p-5 space-y-2">
                       <span className="text-[10px] text-gold uppercase">{proj.category}</span>
                       <h3 className="font-serif text-xl text-charcoal">
-                        <Link to={`/projects/${proj.id}`}>{proj.title}</Link>
+                        <span>{proj.title}</span>
                       </h3>
                       <p className="text-xs text-stone-500">{proj.location} &bull; {proj.area}</p>
                     </div>
                   </div>
 
                   <div className="p-5 pt-0 border-t border-stone-100 flex items-center justify-between mt-3">
-                    <Link to={`/projects/${proj.id}`} className="text-xs text-walnut hover:text-gold uppercase font-semibold flex items-center gap-1">
+                    <span className="text-xs text-walnut hover:text-gold uppercase font-semibold flex items-center gap-1">
                       <span>View Monograph</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                    </span>
                   </div>
                 </div>
               ))}

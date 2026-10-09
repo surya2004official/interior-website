@@ -203,7 +203,8 @@ export const HomePage = () => {
             {featuredProjects.map((proj) => {
               const saved = isProjectSaved(proj.id);
               return (
-                <div key={proj.id} className="group relative bg-white border border-stone-200 shadow-luxury overflow-hidden rounded-2xl">
+                <div key={proj.id} className="relative isolate group bg-white border border-stone-200 shadow-luxury overflow-hidden rounded-2xl">
+                  <Link to={`/projects/${proj.id}`} aria-label={`View ${proj.title}`} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                   <div className="relative aspect-[16/10] overflow-hidden bg-charcoal-900">
                     <img 
                       src={proj.heroImage} 
@@ -220,7 +221,7 @@ export const HomePage = () => {
                     {/* Wishlist toggle */}
                     <button
                       onClick={(e) => { e.preventDefault(); toggleSaveProject(proj.id); }}
-                      className="absolute top-4 right-4 p-2 rounded-full bg-charcoal-950/80 text-white hover:text-gold backdrop-blur-md transition-colors"
+                      className="z-20 absolute top-4 right-4 p-2 rounded-full bg-charcoal-950/80 text-white hover:text-gold backdrop-blur-md transition-colors"
                       title="Save Project"
                     >
                       <Heart className={`w-4 h-4 ${saved ? 'text-gold fill-gold' : ''}`} />
@@ -234,9 +235,9 @@ export const HomePage = () => {
                     </div>
 
                     <h3 className="font-serif text-2xl text-charcoal group-hover:text-walnut transition-colors">
-                      <Link to={`/projects/${proj.id}`}>
+                      <span>
                         {proj.title}
-                      </Link>
+                      </span>
                     </h3>
 
                     <p className="text-stone-600 text-xs line-clamp-2 leading-relaxed">
@@ -247,13 +248,12 @@ export const HomePage = () => {
                       <span className="text-[11px] uppercase tracking-wider text-gold font-medium">
                         Style: {proj.style}
                       </span>
-                      <Link 
-                        to={`/projects/${proj.id}`}
+                      <span
                         className="text-xs uppercase tracking-wider text-walnut group-hover:text-gold font-semibold flex items-center gap-1"
                       >
                         <span>View Project</span>
                         <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                      </span>
                     </div>
                   </div>
                 </div>

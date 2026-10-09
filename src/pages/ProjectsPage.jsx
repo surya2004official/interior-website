@@ -104,8 +104,9 @@ export const ProjectsPage = () => {
               return (
                 <div 
                   key={project.id} 
-                  className="bg-white border border-stone-200 group shadow-sm hover:shadow-luxury transition-all duration-500 flex flex-col justify-between rounded-2xl overflow-hidden"
+                  className="relative isolate bg-white border border-stone-200 group shadow-sm hover:shadow-luxury transition-all duration-500 flex flex-col justify-between rounded-2xl overflow-hidden"
                 >
+                  <Link to={`/projects/${project.id}`} aria-label={`View ${project.title}`} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                   <div>
                     <div className="relative aspect-[16/11] overflow-hidden bg-charcoal-900">
                       <img 
@@ -121,7 +122,7 @@ export const ProjectsPage = () => {
 
                       <button
                         onClick={() => toggleSaveProject(project.id)}
-                        className="absolute top-3 right-3 p-2 rounded-full bg-charcoal-950/80 text-white hover:text-gold backdrop-blur-md transition-colors"
+                        className="z-20 absolute top-3 right-3 p-2 rounded-full bg-charcoal-950/80 text-white hover:text-gold backdrop-blur-md transition-colors"
                         title="Save Project"
                       >
                         <Heart className={`w-3.5 h-3.5 ${saved ? 'text-gold fill-gold' : ''}`} />
@@ -135,9 +136,9 @@ export const ProjectsPage = () => {
                       </div>
 
                       <h3 className="font-serif text-xl sm:text-2xl text-charcoal group-hover:text-walnut transition-colors leading-tight">
-                        <Link to={`/projects/${project.id}`}>
+                        <span>
                           {project.title}
-                        </Link>
+                        </span>
                       </h3>
 
                       <p className="text-stone-600 text-xs line-clamp-3 leading-relaxed">
@@ -150,13 +151,12 @@ export const ProjectsPage = () => {
                     <span className="text-[11px] uppercase tracking-wider text-gold font-medium">
                       {project.style}
                     </span>
-                    <Link 
-                      to={`/projects/${project.id}`}
+                    <span
                       className="text-xs uppercase tracking-wider text-walnut group-hover:text-gold font-semibold flex items-center gap-1"
                     >
                       <span>Explore Monograph</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                    </span>
                   </div>
                 </div>
               );

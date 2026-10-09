@@ -109,13 +109,14 @@ export const ServiceDetailPage = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {matchingProjects.map(proj => (
-                    <div key={proj.id} className="bg-white border border-stone-200 overflow-hidden group rounded-2xl shadow-sm hover:shadow-luxury transition-all">
+                    <div key={proj.id} className="relative isolate bg-white border border-stone-200 overflow-hidden group rounded-2xl shadow-sm hover:shadow-luxury transition-all">
+                      <Link to={`/projects/${proj.id}`} aria-label={`View ${proj.title}`} className="absolute inset-0 z-10 rounded-[inherit] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold" />
                       <div className="aspect-[4/3] overflow-hidden">
                         <img src={proj.heroImage} alt={proj.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                       </div>
                       <div className="p-3">
                         <h4 className="font-serif text-sm text-charcoal group-hover:text-gold truncate">
-                          <Link to={`/projects/${proj.id}`}>{proj.title}</Link>
+                          <span>{proj.title}</span>
                         </h4>
                         <span className="text-[10px] text-stone-500">{proj.location}</span>
                       </div>
